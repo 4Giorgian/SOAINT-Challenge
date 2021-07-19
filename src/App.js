@@ -1,11 +1,11 @@
 import React from 'react'
 import { GlobalStyle } from './styles/GlobalStyles'
-import { ListOfProducts } from './components/ListOfProducts'
-import { ListOfCartItems } from './components/ListOfCartItems'
-import { Summary } from './components/Summary'
+import { Shop } from './pages/shop'
+import { Cart } from './pages/cart'
+import { Summary } from './pages/Summary'
 import { ContextProvider } from './contextProvider'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Header } from './components/Header'
+import { Header } from './layout/Header'
 
 export const App = () => (
 
@@ -15,10 +15,10 @@ export const App = () => (
       <Header />
       <Switch>
         <Route exact path='/'>
-          <ListOfProducts />
+          <Shop />
         </Route>
-        <Route exact path='/cart'>
-          <ListOfCartItems />
+        <Route exact path='/carrito'>
+          <Cart />
         </Route>
         <Route
           exact path='/detalle/:id' render={(props) => (

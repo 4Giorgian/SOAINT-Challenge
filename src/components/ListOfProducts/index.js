@@ -11,13 +11,10 @@ export const ListOfProducts = () => {
   }, [state.cartItems])
 
   return (
-    <div>
-      <Title>TIENDA</Title>
-      <ListWrapper>
-        {
-        state.products.map((product) => <Product key={product.id} {...product} />)
-        }
-      </ListWrapper>
-    </div>
+    <ListWrapper>
+      {
+      state.products.map((product) => <Product key={product.id} {...product} />)
+      }
+    </ListWrapper>
   )
 }

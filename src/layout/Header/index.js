@@ -22,7 +22,7 @@ export const Header = () => {
 
   const handleClickShoppingCart = () => {
     console.log('clickshop')
-    history.push('/cart')
+    history.push('/carrito')
   }
   return (
     <IconButton onClick={handleClickShoppingCart} aria-label='cart'>

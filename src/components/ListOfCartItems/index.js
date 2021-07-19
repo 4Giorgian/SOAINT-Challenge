@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { CartItem } from '../CartItem'
-import { HeadersRow } from './styles'
+import { Table, Th } from './styles'
 import { AppContext } from '../../contextProvider'
 
 export const ListOfCartItems = () => {
@@ -22,30 +22,19 @@ export const ListOfCartItems = () => {
 
   return (
     <div>
-      <h1>CARRITO DE COMPRAS</h1>
-      <HeadersRow>
-        <div>
-          ID
-        </div>
-        <div>
-          NOMBRE
-        </div>
-        <div>
-          PRECIO UNITARIO
-        </div>
-        <div>
-          PRECIO
-        </div>
-        <div>
-          CANTIDAD
-        </div>
-        <div>
-          ELIMINAR
-        </div>
-      </HeadersRow>
-      {
+      <Table>
+        <tr>
+          <Th> ID </Th>
+          <Th> TITULO </Th>
+          <Th> PRECIO UNITARIO </Th>
+          <Th> PRECIO TOTAL </Th>
+          <Th> CANTIDAD </Th>
+          <Th> ELIMINAR </Th>
+        </tr>
+        {
         state.cartItems.map((product) => <CartItem key={product.id} {...product} />)
       }
+      </Table>
       <div>TOTAL A PAGAR = {state.totalAmount}</div>
     </div>
   )

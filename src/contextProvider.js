@@ -14,7 +14,6 @@ export const ContextProvider = (props) => {
   const [state, setState] = useState(initialState)
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products').then((result) => {
-      console.log('RESPONSE', result)
       setState({ ...state, products: result.data })
     })
   }, [])

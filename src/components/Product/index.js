@@ -36,7 +36,7 @@ export const Product = ({ id = 1, title = 'NOMBRE', price = '100', addedToCart =
     <Card>
       <Img onClick={handleClickCard} src={image} />
       <div>{title}</div>
-      <p1>S/.{price}</p1>
+      <p>S/.{price}</p>
       <Button variant='contained' color='primary' onClick={addCart} disabled={addedToCart}>Lo quiero</Button>
     </Card>
   )

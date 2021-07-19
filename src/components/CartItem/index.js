@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Row } from './styles'
+import { Td } from './styles'
 import { AppContext } from '../../contextProvider'
 
 export const CartItem = ({ id = 1, title = 'producto', price = 100, addedToCart = true, totalPrice = price }) => {
@@ -30,19 +30,21 @@ export const CartItem = ({ id = 1, title = 'producto', price = 100, addedToCart 
     setState({ ...state, products, cartItems: [...state.cartItems].filter(cartItem => cartItem.id !== id) })
   }
   return (
-    <div>
-      <Row>
-        <div>{id}</div>
-        <div>{title}</div>
-        <div>{price}</div>
-        <div>S/.{totalPrice}</div>
+    <tr>
+      <Td>{id}</Td>
+      <Td>{title}</Td>
+      <Td>{price}</Td>
+      <Td>S/.{totalPrice}</Td>
+      <Td>
         <select onChange={getTotalPrice}>
           {
             [1, 2, 3, 4, 5, 6].map(option => <option key={option} value={option}>{option}</option>)
           }
         </select>
+      </Td>
+      <Td>
         <button onClick={removeItemCart}> quitar </button>
-      </Row>
-    </div>
+      </Td>
+    </tr>
   )
 }

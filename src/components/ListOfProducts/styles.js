@@ -8,6 +8,3 @@ export const ListWrapper = styled.div`
 export const CartWrapper = styled.div`
     padding: 0 30px;
 `
-export const Title = styled.h1`
-  text-align: center;
-`
